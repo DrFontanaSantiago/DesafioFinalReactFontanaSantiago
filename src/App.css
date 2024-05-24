@@ -1,0 +1,27 @@
+#cart-widget > span {
+  color: rgb(228, 125, 8);
+  padding-left: 1rem;
+  font-weight: bold;
+}
+
+#cart-widget img {
+  width: 40px;
+}
+
+.navbar > .container {
+  font-size: 31px;
+}
+
+.container {
+  padding-right: 8rem;
+  padding-left: 20rem;
+}
+
+.container,
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.navbar-brand {
+  font-size: inherit;
+}
