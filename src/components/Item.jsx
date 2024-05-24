@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { Card, Button } from 'react-bootstrap';
-import { CartContext } from '../context/CartContext';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Card, Button } from "react-bootstrap";
+import { CartContext } from "../context/CartContext";
 
 export const Item = ({ product }) => {
   const { addItem } = useContext(CartContext);
@@ -11,14 +11,14 @@ export const Item = ({ product }) => {
   };
 
   return (
-    <Card className="mb-3" style={{ width: '18rem' }}>
+    <Card className="mb-3" style={{ width: "18rem" }}>
       <Card.Img variant="top" src={product.imagen} />
       <Card.Body>
         <Card.Title>{product.titulo}</Card.Title>
         <Card.Text>{product.descripcion}</Card.Text>
         <Card.Text>{product.categoria}</Card.Text>
         {product.precio && <Card.Text>${product.precio}</Card.Text>}
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Button variant="primary" onClick={handleAddToCart}>
             Agregar al carrito
           </Button>
