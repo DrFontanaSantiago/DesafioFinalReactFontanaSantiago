@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export const ItemCount = ({ onAdd, stock }) => {
   const [count, setCount] = useState(1);
@@ -17,7 +17,7 @@ export const ItemCount = ({ onAdd, stock }) => {
 
   const handleAdd = () => {
     onAdd(count);
-    setCount(1); // Reset count after adding to cart
+    setCount(1);
   };
 
   return (
@@ -34,7 +34,7 @@ export const ItemCount = ({ onAdd, stock }) => {
         className="form-control mx-2"
         value={count}
         readOnly
-        style={{ width: '60px', textAlign: 'center' }}
+        style={{ width: "60px", textAlign: "center" }}
       />
       <button
         className="btn btn-success"

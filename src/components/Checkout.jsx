@@ -1,17 +1,17 @@
-import React, { useState, useContext } from 'react';
-import { CartContext } from '../context/CartContext';
-import { collection, addDoc } from 'firebase/firestore';
-import { Container, Form, Button } from 'react-bootstrap';
+import React, { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import { collection, addDoc } from "firebase/firestore";
+import { Container, Form, Button } from "react-bootstrap";
 import { db } from "../services/firebase/firebaseConfig";
 
 const Checkout = () => {
   const { items, clear } = useContext(CartContext);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
-  const [phone, setPhone] = useState('');
-  const [orderId, setOrderId] = useState(null); // Estado para almacenar el ID de la orden
-  const [purchaseCompleted, setPurchaseCompleted] = useState(false); // Estado para controlar si se completó la compra
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [orderId, setOrderId] = useState(null);
+  const [purchaseCompleted, setPurchaseCompleted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,15 +23,15 @@ const Checkout = () => {
     };
 
     try {
-      const ordersCollection = collection(db, 'orders');
+      const ordersCollection = collection(db, "orders");
       const docRef = await addDoc(ordersCollection, order);
-      console.log('Order ID: ', docRef.id);
-      setOrderId(docRef.id); 
-      clear(); 
+      console.log("Order ID: ", docRef.id);
+      setOrderId(docRef.id);
+      clear();
       setPurchaseCompleted(true);
       alert(`¡Compra realizada con éxito! ID de pedido: ${docRef.id}`);
     } catch (error) {
-      alert('Hubo un error al procesar la compra.');
+      alert("Hubo un error al procesar la compra.");
     }
   };
 
